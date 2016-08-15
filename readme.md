@@ -20,8 +20,7 @@ to `.vimrc`, and then run `:PluginInstall`.
     cd ~/.vim/bundle
     git clone https://github.com/marshallmick007/vim-ng1-snippets.git
     # Or, via git submodules
-    git submodule add
-https://github.com/marshallmick007/vim-ng1-snippets.git vim-ng1-snippets
+    git submodule add https://github.com/marshallmick007/vim-ng1-snippets.git vim-ng1-snippets
 
 ## Snippets Provided
 
