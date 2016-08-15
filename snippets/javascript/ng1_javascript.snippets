@@ -1,0 +1,95 @@
+snippet ng1mod
+
+	(function() {
+		'use strict';
+	
+		angular.module('${1:#module}', [
+			$0
+		]);
+	})();
+
+
+snippet ng1c
+
+	(function() {
+		'use strict';
+		angular.module('${1:#module}')
+			   .controller('${2:#name}Controller', $2Controller);
+
+		$2Controller.$inject = ['$3'];
+		/* ngInject */
+		function $2Controller(${3:#dependency}) {
+			var vm = this;
+			${0}
+				
+			activate();
+
+			function activate() { 
+			
+			}
+		}
+	})();
+
+
+snippet ng1s
+
+	(function() {
+		'use strict';
+
+		angular.module('${1:#Module}')
+			   .service('${2:#Service}', $2);
+		
+		$2.$inject = ['$3'];
+		/* @ngInject */
+		function $2(${3:#dependency1}) {
+			this.${4:#exposedFn} = $4Fn;
+			$0
+
+			function $4Fn () { 
+
+			}
+		}
+	})();
+
+
+snippet ng1comp
+
+	(function() {
+		'use strict';
+
+		var $3 = {
+			bindings: {
+				$0
+			},
+			controller: '$3Controller as vm',
+			templateUrl: '${4:#templateurl}'
+		};
+
+		angular.module('${1:#Module}')
+			   .component('${2:#component}', ${3:#options});
+
+	})();
+
+snippet ng1d
+
+	(function() {
+		'use strict';
+
+		angular.module('${1:#Module}')
+			   .directive('${2:#Directive}', ${3:DirectiveFn});
+
+		$3.$inject = ['$4'];
+		/* @ngInject */
+		function $3(${4:dependency1}) {
+		var directive = {
+			bindToController: true,
+			controller: ${Controller}Controller,
+			controllerAs: 'vm',
+			restrict: 'A',
+			scope: {
+				$0
+			},
+			templateUrl: '${5:#templateurl}'
+		};
+		return directive;
+	})();
